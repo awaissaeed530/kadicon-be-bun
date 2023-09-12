@@ -4,12 +4,17 @@
   "module": "src/index.js",
   "scripts": {
     "dev": "bun run --watch src/index.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "bun test",
+    "migrations:generate": "drizzle-kit generate:pg --config ./drizzle.config.ts"
   },
   "dependencies": {
-    "elysia": "latest"
+    "drizzle-orm": "^0.28.6",
+    "elysia": "0.6.23",
+    "pg": "^8.11.3"
   },
   "devDependencies": {
-    "bun-types": "latest"
+    "@types/pg": "^8.10.2",
+    "bun-types": "1.0.1",
+    "drizzle-kit": "^0.19.13"
   }
 }
