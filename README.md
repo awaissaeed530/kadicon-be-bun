@@ -11,7 +11,7 @@
 ### Get Time Slots
 #### 4 Threads with 1000 connections for 10s
 
-<p>
+```
 Running 10s test @ http://localhost:3000/schedule/slots
   4 threads and 1000 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
@@ -31,10 +31,10 @@ Running 10s test @ https://europe-west3-kadi-dev.cloudfunctions.net/getTimeSlots
   Non-2xx or 3xx responses: 2
 Requests/sec:    526.36
 Transfer/sec:    610.62KB
-</p>
+```
 
 #### 16 Threads with 1000 connections for 30s
-<p>
+```
 Running 30s test @ http://localhost:3000/schedule/slots
   16 threads and 1000 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
@@ -54,12 +54,12 @@ Running 30s test @ https://europe-west3-kadi-dev.cloudfunctions.net/getTimeSlots
   Non-2xx or 3xx responses: 17
 Requests/sec:   1685.29
 Transfer/sec:      1.91MB
-</p>
+```
 
 ### Create Reservation
 #### 4 Threads with 1000 connections for 10s
 
-<p>
+```
 Running 10s test @ http://localhost:3000/reservation
   4 threads and 1000 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
@@ -78,4 +78,4 @@ Running 10s test @ https://europe-west3-kadi-dev.cloudfunctions.net/createReserv
   Socket errors: connect 0, read 0, write 0, timeout 504
 Requests/sec:     50.49
 Transfer/sec:     16.50KB
-</p>
+```
