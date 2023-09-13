@@ -13,7 +13,7 @@ export const scheduleRoutes = new Elysia().group("/schedule", (app) =>
   app
     .post(
       "/",
-      ({ body, set }) => {
+      ({ body }) => {
         return dbContext
           .insert(ScheduleSchema)
           .values({

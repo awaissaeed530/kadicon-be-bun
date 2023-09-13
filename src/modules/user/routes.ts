@@ -1,5 +1,5 @@
 import { eq } from "drizzle-orm";
-import Elysia, { NotFoundError } from "elysia";
+import Elysia, { NotFoundError, t } from "elysia";
 import { dbContext } from "../../database";
 import { UserSchema } from "../../database/schema";
 import { CreateUserRequest, CreateUserResponse } from "./model";
@@ -20,13 +20,16 @@ export const userRoutes = new Elysia().group("/user", (app) =>
       },
       {
         body: CreateUserRequest,
-        response: { 201: CreateUserResponse },
+        response: {
+          201: CreateUserResponse,
+          400: t.Object({ message: t.String() }),
+        },
       }
     )
     .get("/", () => {
       return dbContext.select().from(UserSchema).limit(10);
     })
-    .get("/:id", async ({ params: { id }, set }) => {
+    .get("/:id", async ({ params: { id } }) => {
       const res = await dbContext
         .select()
         .from(UserSchema)
@@ -34,7 +37,6 @@ export const userRoutes = new Elysia().group("/user", (app) =>
         .limit(1);
 
       if (!res.at(0)) {
-        set.status = 404;
         throw new NotFoundError();
       }
       return res.at(0);
