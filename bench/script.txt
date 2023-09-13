@@ -1,0 +1,6 @@
+wrk -t16 -c1000 -d30s -s data.lua http://localhost:3000/schedule/slots
+wrk -t16 -c1000 -d30s -s data.lua https://europe-west3-kadi-dev.cloudfunctions.net/getTimeSlotsByDate
+
+
+wrk -t16 -c1000 -d30s -s reservation_request.lua http://localhost:3000/reservation
+wrk -t16 -c1000 -d30s -s reservation_request.lua https://europe-west3-kadi-dev.cloudfunctions.net/createReservation

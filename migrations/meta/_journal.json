@@ -15,6 +15,13 @@
       "when": 1694525332928,
       "tag": "0001_worthless_mister_sinister",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1694603174512,
+      "tag": "0002_stale_annihilus",
+      "breakpoints": true
     }
   ]
 }

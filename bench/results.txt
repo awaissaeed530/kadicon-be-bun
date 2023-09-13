@@ -1,15 +1,4 @@
-- [x] Postgres & ORM integration
-- [x] Create Reservation
-- [x] Schedule Table for calculating time slots
-- [x] Time slots
-- [ ] Migrate data from firestore to postgres
-
-
-
-# Results
-
-### Get Time Slots
-#### 4 Threads with 1000 connections for 10s
+4 Threads with 1000 connections for 10s
 
 Running 10s test @ http://localhost:3000/schedule/slots
   4 threads and 1000 connections
@@ -31,7 +20,7 @@ Running 10s test @ https://europe-west3-kadi-dev.cloudfunctions.net/getTimeSlots
 Requests/sec:    526.36
 Transfer/sec:    610.62KB
 
-#### 16 Threads with 1000 connections for 30s
+16 Threads with 1000 connections for 30s
 
 Running 30s test @ http://localhost:3000/schedule/slots
   16 threads and 1000 connections
@@ -52,26 +41,3 @@ Running 30s test @ https://europe-west3-kadi-dev.cloudfunctions.net/getTimeSlots
   Non-2xx or 3xx responses: 17
 Requests/sec:   1685.29
 Transfer/sec:      1.91MB
-
-
-### Create Reservation
-#### 4 Threads with 1000 connections for 10s
-
-Running 10s test @ http://localhost:3000/reservation
-  4 threads and 1000 connections
-  Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency   707.20ms   61.66ms   1.05s    93.80%
-    Req/Sec   619.10    547.07     1.78k    57.23%
-  13394 requests in 10.03s, 7.45MB read
-Requests/sec:   1335.58
-Transfer/sec:    760.39KB
-
-Running 10s test @ https://europe-west3-kadi-dev.cloudfunctions.net/createReservation
-  4 threads and 1000 connections
-  Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     1.86s    59.09ms   1.92s    66.67%
-    Req/Sec    28.90     27.08   141.00     83.12%
-  507 requests in 10.04s, 165.69KB read
-  Socket errors: connect 0, read 0, write 0, timeout 504
-Requests/sec:     50.49
-Transfer/sec:     16.50KB

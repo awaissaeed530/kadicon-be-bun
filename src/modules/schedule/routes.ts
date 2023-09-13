@@ -1,4 +1,4 @@
-import Elysia from "elysia";
+import Elysia, { t } from "elysia";
 import { dbContext } from "../../database";
 import { ScheduleSchema } from "../../database/schema";
 import {
@@ -30,8 +30,10 @@ export const scheduleRoutes = new Elysia().group("/schedule", (app) =>
     .get("/", () => {
       return dbContext.select().from(ScheduleSchema).limit(10);
     })
-    .get("slots", () => {
-      return getTimeSlotsByDate(new Date());
+    .post("slots", ({ body }) => {
+      return getTimeSlotsByDate(new Date(body.date));
+    }, {
+        body: t.Object({ date: t.String(), restaurantId: t.String() })
     })
 );
 
