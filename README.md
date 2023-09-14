@@ -2,7 +2,7 @@
 - [x] Create Reservation
 - [x] Schedule Table for calculating time slots
 - [x] Time slots
-- [ ] Migrate data from firestore to postgres
+- [ ] Migrate data from firestore to postgres (Bun doesn't support HTTP2 yet so firebase-admin does not work)
 
 
 
